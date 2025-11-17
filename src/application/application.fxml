@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.LibraryController">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <Label text="Library Management System" style="-fx-font-size: 22;" />
+
+            <HBox spacing="10">
+                <TextField fx:id="idField" promptText="Book ID" />
+                <TextField fx:id="titleField" promptText="Book Title" />
+                <TextField fx:id="authorField" promptText="Author" />
+                <Button text="Add Book" onAction="#addBook" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="table" style="-fx-padding: 10;">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="80" />
+                <TableColumn fx:id="titleCol" text="Title" prefWidth="180" />
+                <TableColumn fx:id="authorCol" text="Author" prefWidth="150" />
+                <TableColumn fx:id="statusCol" text="Status" prefWidth="100" />
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <TextField fx:id="searchField" promptText="Enter Book ID" />
+            <Button text="Search" onAction="#searchBook" />
+            <Button text="Issue Book" onAction="#issueBook" />
+            <Button text="Return Book" onAction="#returnBook" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
